@@ -1,42 +1,52 @@
 body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: #ffe6e6;
-            overflow-x: hidden;
-        }
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #ffe6e6;
+    overflow-x: hidden;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        .header {
-            text-align: center;
-            padding: 50px 0;
-            background: #ff3366;
-            color: white;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
+.header {
+    text-align: center;
+    padding: 50px 0;
+    background: #ff3366;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px 0;
-        }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 0;
+}
 
-        .photo {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    aspect-ratio: 1/1; /* Makes container square */
+}
 
-        .photo:hover {
-            transform: scale(1.05);
-        }
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills container without distortion */
+    display: block;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+/* Rest of your existing styles remain the same */
 
         .message {
             font-size: 1.2em;
