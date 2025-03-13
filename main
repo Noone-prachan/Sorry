@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>माफ पाउन चाहन्छु - Forgive Me My Love</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #ffe6e6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background: #ff3366;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .message {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .nepali-text {
+            font-family: 'Preeti', sans-serif;
+            font-size: 1.5em;
+            color: #ff3366;
+            margin: 20px 0;
+        }
+
+        .heart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 48px;
+            color: #ff3366;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>प्रिये ❤️</h1>
+        <div class="nepali-text">माफ गरिदेउ है, मैले तिम्रो मन दुखाएकोमा धेरै पछुतो छ</div>
+    </div>
+
+    <div class="container">
+        <div class="gallery">
+            <!-- Add 6-8 photos of her here -->
+            <div class="photo"><img src="photo1.jpg" alt="Our Memory"></div>
+            <div class="photo"><img src="photo2.jpg" alt="Special Moment"></div>
+            <!-- Add more photos -->
+        </div>
+
+        <div class="message">
+            <div class="nepali-text">म जान्दछु मैले गल्ती गरेँ, तर मेरो मनले तिमीलाई नै चाहन्छ</div>
+            <p>Every moment without you feels empty.<br> I'm extremely sorry plss sanu.. <br>I promise to:</p>
+            <ul>
+                <li>Always listen to you</li>
+                <li>Respect your feelings</li>
+                <li>Love you more each day</li>
+            </ul>
+        </div>
+
+        <div class="message">
+            <div class="nepali-text">तिमी नभएको जीवन अधुरो छ</div>
+            <p>You're my everything. 
+            <br>Please give me one more chance to make things right.Plsss budi malai maaf gardeu plss..I'm really very very sorry for everything plss budi..</p>
+        </div>
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <script>
+        // Add animations on scroll
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.photo, .message');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Add background music
+        const audio = new Audio('love_song.mp3');
+        window.onload = () => {
+            audio.play().catch(() => {
+                // Handle autoplay restrictions
+                const playButton = document.createElement('button');
+                playButton.textContent = 'Play Music';
+                document.body.appendChild(playButton);
+                playButton.addEventListener('click', () => audio.play());
+            });
+        };
+    </script>
+</body>
+</html>
